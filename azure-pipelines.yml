@@ -34,12 +34,7 @@ steps:
   inputs:
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-- task: SSH@0
-  inputs:
-    runOptions: 'commands'
-    commands: |
-      mv /home/vsts/work/1/a/complete/target/spring-boot-0.0.1-SNAPSHOT.jar /home/vsts/work/1/a/complete/target/app.jar
-    readyTimeout: '20000'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
